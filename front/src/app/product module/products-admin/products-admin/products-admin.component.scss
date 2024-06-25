@@ -1,0 +1,22 @@
+div.containter {
+  margin-top: 500px;
+}
+
+.actionsIcons {
+  display: flex;
+  gap: 50px;
+}
+
+.button-like {
+  cursor: pointer;
+}
+
+.buttons {
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 10px;
+
+  p-button {
+    cursor: pointer;
+  }
+}

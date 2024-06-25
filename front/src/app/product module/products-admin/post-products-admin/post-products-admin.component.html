@@ -1,0 +1,114 @@
+<div class="container">
+  <h2>Enter a product</h2>
+
+  <form [formGroup]="productForm">
+    <div class="field">
+      <input pInputText placeholder="code" formControlName="code" />
+      <small
+        class="p-error block"
+        *ngIf="productForm.get('code')?.hasError('required')"
+      >
+        Code required</small
+      >
+    </div>
+
+    <div class="field">
+      <input pInputText placeholder="name" formControlName="name" />
+      <small
+        class="p-error block"
+        *ngIf="productForm.get('code')?.hasError('required')"
+      >
+        Name required</small
+      >
+    </div>
+
+    <div class="field">
+      <input
+        pInputText
+        placeholder="description"
+        formControlName="description"
+      />
+      <small
+        class="p-error block"
+        *ngIf="productForm.get('description')?.hasError('required')"
+      >
+        Description required</small
+      >
+    </div>
+
+    <div class="field">
+      <input
+        type="number"
+        pInputNumber
+        placeholder="Price"
+        formControlName="price"
+      />
+      <small
+        class="p-error block"
+        *ngIf="productForm.get('price')?.hasError('required')"
+      >
+        Price required</small
+      >
+    </div>
+
+    <div class="field">
+      <p-dropdown
+        placeholder="Select a category"
+        formControlName="category"
+        [options]="listOfCategories"
+      ></p-dropdown>
+      <small
+        class="p-error block"
+        *ngIf="productForm.get('category')?.hasError('required')"
+      >
+        category required</small
+      >
+    </div>
+
+    <div class="field">
+      <p-dropdown
+        placeholder=" Select an inventory status"
+        formControlName="inventoryStatus"
+        [options]="listOfInventoryStatus"
+      ></p-dropdown>
+      <small
+        class="p-error block"
+        *ngIf="productForm.get('inventoryStatus')?.hasError('required')"
+      >
+        inventory status required</small
+      >
+    </div>
+
+    <div class="field">
+      <input
+        type="number"
+        pInputNumber
+        placeholder="quantity"
+        formControlName="quantity"
+      />
+      <small
+        class="p-error block"
+        *ngIf="productForm.get('quantity')?.hasError('required')"
+      >
+        Quantity required</small
+      >
+    </div>
+
+    <div class="field">
+      <input
+        type="number"
+        pInputNumber
+        placeholder="rating"
+        formControlName="rating"
+      />
+    </div>
+
+    <button
+      pButton
+      type="submit"
+      [disabled]="productForm.invalid"
+      label="Submit"
+      (click)="postProduit()"
+    ></button>
+  </form>
+</div>

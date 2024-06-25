@@ -1,0 +1,39 @@
+.app-header {
+  height: 50px;
+  margin-left: 60px;
+  position: fixed;
+  width: 300%;
+  z-index: 1;
+}
+
+.app-container {
+  display: grid;
+  grid-template-areas:
+    "app-sidenav app-navbar app-navbar"
+    "app-sidenav div div"
+    "app-sidenav router-outlet router-outlet";
+
+  grid-template-columns: 260px 1fr 9fr;
+}
+
+// app-sidenav {
+//   grid-column: 1 / 2;
+// }
+
+// .app-header {
+//   grid-column: 1 / -1;
+// }
+
+// router-outlet {
+//   grid-column: 2 / 3;
+// }
+
+router-outlet {
+  position: fixed;
+}
+
+.test {
+  position: fixed;
+  top: 100px;
+  left: 400px;
+}
